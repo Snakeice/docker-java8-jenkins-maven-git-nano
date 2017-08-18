@@ -18,6 +18,7 @@ RUN apt-get update
 
 # install wget
 RUN apt-get install -y wget
+RUN apt-get install -y apt-utils
 
 # get maven 3.2.2
 RUN wget --no-verbose -O /tmp/apache-maven-3.5.0-bin.tar.gz http://archive.apache.org/dist/maven/maven-3/3.5.0/binaries/apache-maven-3.5.0-bin.tar.gz
@@ -36,6 +37,7 @@ RUN apt-get install -y git
 
 # install nano
 RUN apt-get install -y nano
+RUN apt-get install -y software-properties-common python-software-properties
 
 # remove download archive files
 RUN apt-get clean
