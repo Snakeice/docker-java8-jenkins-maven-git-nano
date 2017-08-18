@@ -51,9 +51,6 @@ RUN \
   rm -rf /var/lib/apt/lists/* && \
   rm -rf /var/cache/oracle-jdk8-installer
 
-# configure symbolic links for the java and javac executables
-RUN update-alternatives --install /usr/bin/java java $JAVA_HOME/bin/java 20000 && update-alternatives --install /usr/bin/javac javac $JAVA_HOME/bin/javac 20000
-
 # copy jenkins war file to the container
 ADD http://ftp-chi.osuosl.org/pub/jenkins/war-stable/2.60.3/jenkins.war /opt/jenkins.war
 RUN chmod 644 /opt/jenkins.war
